@@ -51,5 +51,6 @@ https://github.com/obrera/nightshift-030-pulseboard
 
 - `npm run build`
 - `npm run lint`
+- `npm run deploy`
 - GitHub Pages published from `gh-pages`
-- Verified `https://obrera.github.io/nightshift-030-pulseboard/` returned `HTTP/2 200` on `2026-03-15T01:11:13Z`
+- Verified `https://obrera.github.io/nightshift-030-pulseboard/` returned `HTTP/2 200` on `2026-03-15T01:12:56Z`
