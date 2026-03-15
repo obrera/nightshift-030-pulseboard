@@ -589,7 +589,7 @@ function App() {
     <main className="min-h-screen overflow-x-clip bg-grid bg-[size:32px_32px] px-4 py-6 text-slate-100 sm:px-6 lg:px-8">
       <div className="mx-auto flex min-w-0 max-w-7xl flex-col gap-6">
         <section className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/70 shadow-glow backdrop-blur-xl">
-          <div className="grid gap-8 px-6 py-8 lg:grid-cols-[1.25fr_0.75fr] lg:px-8">
+          <div className="grid grid-cols-1 gap-8 px-6 py-8 lg:grid-cols-[1.25fr_0.75fr] lg:px-8">
             <div className="min-w-0 space-y-6">
               <div className="inline-flex max-w-full items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
                 Nightshift 030 PulseBoard
@@ -704,7 +704,7 @@ function App() {
           </section>
         )}
 
-        <section className="grid gap-6 xl:grid-cols-[1.4fr_0.6fr]">
+        <section className="grid grid-cols-1 gap-6 xl:grid-cols-[1.4fr_0.6fr]">
           <div className="min-w-0 space-y-6">
             <section className="rounded-[2rem] border border-white/10 bg-slate-950/70 p-6 shadow-glow backdrop-blur-xl">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -740,7 +740,7 @@ function App() {
                 </div>
               ) : (
                 <div className="mt-6 min-w-0 space-y-6">
-                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
                     {[
                       {
                         label: 'US AQI',
@@ -798,7 +798,7 @@ function App() {
                     </span>
                   </div>
 
-                  <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+                  <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1.1fr_0.9fr]">
                     <article className="min-w-0 rounded-3xl border border-white/10 bg-slate-900/80 p-5">
                       <div className="flex items-center justify-between">
                         <div>
@@ -862,7 +862,7 @@ function App() {
                   {savedCities.length}/{MAX_SAVED_CITIES} saved
                 </p>
               </div>
-              <div className="mt-6 grid gap-4 lg:grid-cols-3">
+              <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
                 {compareCities.map((city) => {
                   const snapshot = snapshots[city.id]
                   const tone = snapshot ? labelFromAqi(snapshot.current.aqi).tone : 'Slate'
