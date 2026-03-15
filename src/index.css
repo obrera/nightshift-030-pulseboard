@@ -19,6 +19,7 @@ html {
     radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 35%),
     radial-gradient(circle at right, rgba(16, 185, 129, 0.16), transparent 28%),
     linear-gradient(180deg, #020817 0%, #06121f 45%, #020617 100%);
+  overflow-x: clip;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
   min-height: 100vh;
   background: transparent;
   color: #e2e8f0;
+  overflow-x: clip;
 }
 
 * {
@@ -35,6 +37,7 @@ body {
 
 #root {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 ::-webkit-scrollbar {

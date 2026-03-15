@@ -586,25 +586,25 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen bg-grid bg-[size:32px_32px] px-4 py-6 text-slate-100 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6">
+    <main className="min-h-screen overflow-x-clip bg-grid bg-[size:32px_32px] px-4 py-6 text-slate-100 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-w-0 max-w-7xl flex-col gap-6">
         <section className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/70 shadow-glow backdrop-blur-xl">
           <div className="grid gap-8 px-6 py-8 lg:grid-cols-[1.25fr_0.75fr] lg:px-8">
-            <div className="space-y-6">
-              <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
+            <div className="min-w-0 space-y-6">
+              <div className="inline-flex max-w-full items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
                 Nightshift 030 PulseBoard
               </div>
               <div className="space-y-3">
-                <h1 className="max-w-3xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                <h1 className="max-w-3xl text-balance break-words font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
                   Dark-mode air quality planning for fast city-to-city decisions.
                 </h1>
-                <p className="max-w-2xl text-base text-slate-300 sm:text-lg">
+                <p className="max-w-2xl break-words text-base text-slate-300 sm:text-lg">
                   Search cities, compare up to three saved locations, monitor live AQI and weather,
                   then lock in daily activity notes with exportable local persistence.
                 </p>
               </div>
 
-              <div className="relative max-w-2xl">
+              <div className="relative max-w-2xl min-w-0">
                 <label className="mb-2 block text-sm font-medium text-slate-300" htmlFor="city-search">
                   City search
                 </label>
@@ -639,13 +639,13 @@ function App() {
                           <button
                             type="button"
                             onClick={() => addSavedCity(city)}
-                            className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left transition hover:bg-white/5"
+                            className="flex w-full min-w-0 items-start justify-between gap-4 px-4 py-3 text-left transition hover:bg-white/5"
                           >
-                            <span>
+                            <span className="min-w-0">
                               <span className="block font-medium text-white">{city.name}</span>
-                              <span className="block text-sm text-slate-400">{cityLabel(city)}</span>
+                              <span className="block break-words text-sm text-slate-400">{cityLabel(city)}</span>
                             </span>
-                            <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-300">
+                            <span className="shrink-0 rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-300">
                               Add
                             </span>
                           </button>
@@ -681,7 +681,7 @@ function App() {
               </div>
             </div>
 
-            <aside className="rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
+            <aside className="min-w-0 rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
               <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Planner rules</p>
               <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
                 {[
@@ -705,12 +705,12 @@ function App() {
         )}
 
         <section className="grid gap-6 xl:grid-cols-[1.4fr_0.6fr]">
-          <div className="space-y-6">
+          <div className="min-w-0 space-y-6">
             <section className="rounded-[2rem] border border-white/10 bg-slate-950/70 p-6 shadow-glow backdrop-blur-xl">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Active city</p>
-                  <h2 className="mt-2 font-display text-3xl font-bold text-white">
+                  <h2 className="mt-2 break-words font-display text-3xl font-bold text-white">
                     {activeCity ? cityLabel(activeCity) : 'No city selected'}
                   </h2>
                   {activeSnapshot && (
@@ -739,7 +739,7 @@ function App() {
                     : 'Add or refresh a city to load conditions.'}
                 </div>
               ) : (
-                <div className="mt-6 space-y-6">
+                <div className="mt-6 min-w-0 space-y-6">
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     {[
                       {
@@ -769,7 +769,7 @@ function App() {
                         detail: `${activeSnapshot.trend} trend`,
                       },
                     ].map((metric) => (
-                      <article key={metric.label} className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+                      <article key={metric.label} className="min-w-0 rounded-3xl border border-white/10 bg-white/[0.04] p-5">
                         <p className="text-sm uppercase tracking-[0.24em] text-slate-400">{metric.label}</p>
                         <p className="mt-3 text-4xl font-semibold text-white">{metric.value}</p>
                         <p className="mt-2 text-sm text-slate-300">{metric.detail}</p>
@@ -799,7 +799,7 @@ function App() {
                   </div>
 
                   <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-                    <article className="rounded-3xl border border-white/10 bg-slate-900/80 p-5">
+                    <article className="min-w-0 rounded-3xl border border-white/10 bg-slate-900/80 p-5">
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-sm uppercase tracking-[0.24em] text-slate-400">24h hourly board</p>
@@ -827,7 +827,7 @@ function App() {
                       </div>
                     </article>
 
-                    <article className="rounded-3xl border border-white/10 bg-slate-900/80 p-5">
+                    <article className="min-w-0 rounded-3xl border border-white/10 bg-slate-900/80 p-5">
                       <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Alerts</p>
                       <h3 className="mt-2 text-xl font-semibold text-white">Operational watchlist</h3>
                       <div className="mt-4 space-y-3">
@@ -880,8 +880,8 @@ function App() {
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <h3 className="text-xl font-semibold text-white">{city.name}</h3>
+                        <div className="min-w-0">
+                          <h3 className="break-words text-xl font-semibold text-white">{city.name}</h3>
                           <p className="mt-1 text-sm text-slate-400">{city.admin1 ?? city.country}</p>
                         </div>
                         <span
@@ -914,7 +914,7 @@ function App() {
             </section>
           </div>
 
-          <aside className="space-y-6">
+          <aside className="min-w-0 space-y-6">
             <section className="rounded-[2rem] border border-white/10 bg-slate-950/70 p-6 shadow-glow backdrop-blur-xl">
               <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Advisory planner</p>
               <h2 className="mt-2 font-display text-2xl font-bold text-white">
