@@ -41,4 +41,15 @@ npm run deploy
 
 ## Live URL
 
-Pending deployment verification.
+https://obrera.github.io/nightshift-030-pulseboard/
+
+## Repository
+
+https://github.com/obrera/nightshift-030-pulseboard
+
+## Verification
+
+- `npm run build`
+- `npm run lint`
+- GitHub Pages published from `gh-pages`
+- Verified `https://obrera.github.io/nightshift-030-pulseboard/` returned `HTTP/2 200` on `2026-03-15T01:11:13Z`
